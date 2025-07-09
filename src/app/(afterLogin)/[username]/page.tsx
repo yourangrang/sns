@@ -1,8 +1,8 @@
 
 export default function Profile() {
   return (
-      <main >
-        
-      </main>
+    <main>
+      프로필
+    </main>
   )
 }

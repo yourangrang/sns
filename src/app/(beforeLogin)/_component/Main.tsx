@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <>
       <div className={styles.left}>
-        <Image src={Logo}  width={400} alt="logo" />
+        <Image src={Logo}  width={400} height={150}  alt="logo" priority />
       </div>
       <div className={styles.right}>
         <h1>
