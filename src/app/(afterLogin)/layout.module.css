@@ -71,7 +71,7 @@
     flex-direction: column;
 }
 .rightSectionInner {
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 100%;
     width: 990px;
     display: flex;
@@ -79,10 +79,10 @@
 }
 .main {
     width: 600px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
 }
 .rightSection {
-    background-color: blue;
+    /* background-color: blue; */
     width: 350px;
     height: 100%;
 }
