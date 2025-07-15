@@ -65,7 +65,7 @@
     background-color: rgb(29, 155, 240, 0.1);
 }
 .uploadButton svg {
-    fill: rgb(29, 155, 240);
+    fill: rgb(240, 29, 29);
 }
 .actionButton:disabled {
     opacity: 0.5;
@@ -78,8 +78,8 @@
     font-weight: 700;
     font-size: 15px;
     border-radius: 18px;
-    background-color: rgb(29, 155, 240);
+    background-color: #cd083a;
 }
 .actionButton:hover {
-    background-color: rgb(26, 140, 216);
+    background-color: #cb647e;
 }
