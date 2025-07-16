@@ -9,7 +9,7 @@
 
 .title {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 800;
     line-height: 20px;
     margin-top: 2px;
     margin-bottom: 4px;
@@ -19,5 +19,5 @@
     color: rgb(83, 100, 113);
     font-size: 13px;
     line-height: 16px;
-    font-weight: lighter;
+    font-weight: 300;
 }
