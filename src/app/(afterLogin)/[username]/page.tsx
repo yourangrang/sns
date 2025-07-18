@@ -6,7 +6,7 @@ export default function Profile() {
   const user = { // 임시
     id: 'yourang',
     nickname: '유랑',
-    image: '/yourang.png',
+    image: '/yourang.jpg',
   };
 
   return (
