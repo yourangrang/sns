@@ -8,6 +8,7 @@ export default function Profile() {
     nickname: '유랑',
     image: '/yourang.jpg',
   };
+ 
 
   return (
     <main className={style.main}>
