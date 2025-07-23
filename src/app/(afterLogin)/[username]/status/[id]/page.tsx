@@ -22,6 +22,8 @@ export default function SinglePost() {
         <Post />
         <Post />
         <Post />
+        <Post />
+        <Post />
       </div>
     </div>
   )

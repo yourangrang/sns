@@ -8,7 +8,7 @@ export default function PostForm() {
   const [content, setContent] = useState('');
   const me = {
     id: 'yourang',
-    image: '/yourang.png'
+    image: '/yourang.jpg'
   };
 
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = (e) => {

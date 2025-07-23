@@ -1,6 +1,7 @@
 import style from './profile.module.css';
 import Post from "@/app/(afterLogin)/_component/Post";
 import BackButton from "@/app/(afterLogin)/_component/BackButton";
+import Image from 'next/image';
 
 export default function Profile() {
   const user = { // 임시
@@ -18,7 +19,7 @@ export default function Profile() {
       </div>
       <div className={style.userZone}>
         <div className={style.userImage}>
-          <img src={user.image} alt={user.id} />
+          <Image src={user.image} alt={user.id} width={40} height={40} priority />
         </div>
         <div className={style.userName}>
           <div>{user.nickname}</div>
