@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
+import { MSWProvider } from './_component/MSWComponent';
 
 type Props = {children: ReactNode}
 
@@ -29,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <MSWProvider>
+          {children}
+        </MSWProvider>
       </body>
     </html>
   );
