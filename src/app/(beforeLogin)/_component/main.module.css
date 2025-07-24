@@ -19,7 +19,7 @@
 }
 .right h1 {
     font-weight: bold;
-    font-size: 42px;
+    font-size: 24px;
     margin: 48px 0;
 }
 .right h2 {
@@ -33,9 +33,13 @@
     margin-bottom: 20px;
     margin-top: 40px;
 }
+.left img {
+        width: 250px;
+        height: 100px;
+    }
 
 .signup {
-    width: 300px;
+    width: 200px;
     height: 50px;
     border-radius: 15px;
     padding: 0 16px;
@@ -51,7 +55,7 @@
     background-color:  rgb(199, 25, 40);
 }
 .login {
-    width: 300px;
+    width: 200px;
     height: 50px;
     border-radius: 15px;
     padding: 0 16px;
@@ -65,3 +69,31 @@
 .login:hover {
     background-color: rgba(29,155,240,0.1);
 }
+
+@media all and (min-width: 1000px) {
+    .container {
+        flex-direction: row;
+        padding: 0;
+    }
+    .left {
+        flex: 1;
+        justify-content: center;
+    }
+    .left img {
+        width: 400px;
+        height: 150px;
+    }
+    .right {
+        justify-content: center;
+    }
+    .right h1 {
+        font-size: 45px;
+    }
+    .signup {
+        width: 300px;
+    }
+    .login {
+        width: 300px;
+    }
+}
+

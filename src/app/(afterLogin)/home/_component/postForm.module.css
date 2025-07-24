@@ -23,6 +23,11 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
 }
+@media (prefers-color-scheme: dark) {
+    .postForm {
+        border-color: rgb(47, 51, 54);
+    }
+}
 .postInputSection {
     flex: 1;
 }
@@ -65,12 +70,13 @@
     background-color: rgb(29, 155, 240, 0.1);
 }
 .uploadButton svg {
-    fill: rgb(240, 29, 29);
+    fill: #CD083A;
 }
 .actionButton:disabled {
     opacity: 0.5;
 }
 .actionButton {
+    cursor: pointer;
     width: 94px;
     height: 36px;
     border: none;
@@ -78,8 +84,8 @@
     font-weight: 700;
     font-size: 15px;
     border-radius: 18px;
-    background-color: #cd083a;
+    background-color: #CD083A;
 }
 .actionButton:hover {
-    background-color: #cb647e;
+    background-color: #ed7895;
 }
