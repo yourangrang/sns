@@ -142,3 +142,7 @@
         fill: white;
     }
 }
+.error {
+    font-size: 18px;
+    color: red;
+}
