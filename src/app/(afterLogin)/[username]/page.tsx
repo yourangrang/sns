@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 export default function Profile() {
   const user = { // 임시
-    id: 'yourang',
-    nickname: '유랑',
-    image: '/yourang.jpg',
+    id: 'elonmusk',
+    nickname: '일론',
+    image: '/yRsRRjGO.jpg',
   };
  
 
@@ -19,7 +19,7 @@ export default function Profile() {
       </div>
       <div className={style.userZone}>
         <div className={style.userImage}>
-          <Image src={user.image} alt={user.id} width={40} height={40} priority />
+          <Image src={user.image} alt={user.id} width={40} height={130} priority />
         </div>
         <div className={style.userName}>
           <div>{user.nickname}</div>

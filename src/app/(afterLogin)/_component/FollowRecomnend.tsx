@@ -1,22 +1,21 @@
 "use client"
 
 import style from './followRecommend.module.css';
-import Image from 'next/image';
 
 export default function FollowRecommend() {
   const onFollow = () => {};
 
   const user = {
-        id : 'elonmusk',
-        nickname : 'Elon Musk',
-        image : '/yRsRRjGO.jpg'
-    };
+    id: 'elonmusk',
+    nickname: 'Elon Musk',
+    image: '/yRsRRjGO.jpg'
+  };
 
   return (
     <div className={style.container}>
       <div className={style.userLogoSection}>
         <div className={style.userLogo}>
-          <Image src={user.image} alt={user.id} width={20} height={20} />
+          <img src={user.image} alt={user.id} />
         </div>
       </div>
       <div className={style.userInfo}>
@@ -29,5 +28,3 @@ export default function FollowRecommend() {
     </div>
   )
 }
-
-

@@ -3,7 +3,7 @@ import {faker} from "@faker-js/faker";
 
 const User = [
   {id: 'elonmusk', nickname: 'Elon Musk', image: '/yRsRRjGO.jpg'},
-  {id: 'zerohch0', nickname: '제로초', image: '/5Udwvqim.jpg'},
+  {id: 'yourang', nickname: '유랑', image: '/yourang.jpg'},
   {id: 'leoturtle', nickname: '레오', image: faker.image.avatar()},
 ]
 
