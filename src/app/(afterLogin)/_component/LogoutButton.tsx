@@ -23,7 +23,7 @@ export default function LogoutButton() {
   return (
     <button className={style.logOutButton} onClick={onLogout}>
       <div className={style.logOutUserImage}>
-        <Image src={me.user?.image as string} alt={me.user?.email as string} width={20} height={20} />
+        <Image src={me.user?.image as string} alt={me.user?.email as string} width={20} height={40} />
       </div>
       <div className={style.logOutUserName}>
         <div>{me.user?.name}</div>
