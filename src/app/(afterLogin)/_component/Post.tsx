@@ -5,43 +5,25 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
 import ActionButtons from "@/app/(afterLogin)/_component/ActionButtons";
 import PostArticle from "@/app/(afterLogin)/_component/PostArticle";
-import {faker} from '@faker-js/faker';
 import PostImages from "@/app/(afterLogin)/_component/PostImages";
-import Image from 'next/image';
+import {Post} from "@/model/Post";
 
 dayjs.locale('ko');
 dayjs.extend(relativeTime)
 
 type Props = {
   noImage?: boolean
+  post: Post
 }
-export default function Post({ noImage }: Props) {
-  const target = {
-    postId: 1,
-    User: {
-      id: 'elonmusk',
-      nickname: 'Elon Musk',
-      image: '/yRsRRjGO.jpg',
-    },
-    content: '안녕하세요 일론입니다.',
-    createdAt: new Date(),
-    Images: [] as any[],
-  }
-  if (Math.random() > 0.5 && !noImage) {
-    target.Images.push(
-      { imageId: 1, link: faker.image.urlPicsumPhotos() },
-      { imageId: 2, link: faker.image.urlPicsumPhotos() },
-      { imageId: 3, link: faker.image.urlPicsumPhotos() },
-      { imageId: 4, link: faker.image.urlPicsumPhotos() },
-    );
-  }
+export default function Post({ noImage, post }: Props) {
+  const target = post;
 
   return (
     <PostArticle post={target}>
       <div className={style.postWrapper}>
         <div className={style.postUserSection}>
           <Link href={`/${target.User.id}`} className={style.postUserImage}>
-            <Image src={target.User.image} alt={target.User.nickname} width={40} height={40} priority/>
+            <img src={target.User.image} alt={target.User.nickname}/>
             <div className={style.postShade}/>
           </Link>
         </div>
@@ -58,9 +40,9 @@ export default function Post({ noImage }: Props) {
             <span className={style.postDate}>{dayjs(target.createdAt).fromNow(true)}</span>
           </div>
           <div>{target.content}</div>
-          <div>
+          {!noImage && <div>
             <PostImages post={target} />
-          </div>
+          </div>}
           <ActionButtons/>
         </div>
       </div>
