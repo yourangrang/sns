@@ -1,4 +1,5 @@
 "use client";
+
 import style from './tab.module.css';
 import {useContext} from "react";
 import {TabContext} from "@/app/(afterLogin)/home/_component/TabProvider";
