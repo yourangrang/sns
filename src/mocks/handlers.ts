@@ -254,7 +254,6 @@ export const handlers = [
         Images: [
           {imageId: 1, link: faker.image.urlPicsumPhotos()},
           {imageId: 2, link: faker.image.urlPicsumPhotos()},
-          {imageId: 3, link: faker.image.urlPicsumPhotos()},
         ],
         createdAt: generateDate(),
       },

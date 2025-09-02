@@ -3,6 +3,7 @@
 import style from '../search.module.css';
 import {useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
+
 export default function Tab() {
   const [current, setCurrent] = useState('hot');
   const router = useRouter();

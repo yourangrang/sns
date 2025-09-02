@@ -20,9 +20,11 @@ export default function CommentForm({ id }: Props) {
   const queryClient = useQueryClient();
   const post = queryClient.getQueryData(['posts', id]);
   console.log('post', post, id);
+
   if (!post) {
     return null;
   }
+  
   return (
     <form className={style.postForm} onSubmit={onSubmit}>
       <div className={style.postUserSection}>

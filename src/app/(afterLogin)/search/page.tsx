@@ -9,6 +9,7 @@ type Props = {
 }
 export default async function Search({ searchParams }: Props) {
   const query = await searchParams;
+  
   return (
     <main className={style.main}>
       <div className={style.searchTop}>
