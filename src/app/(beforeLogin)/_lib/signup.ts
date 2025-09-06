@@ -3,7 +3,7 @@
 import {redirect} from "next/navigation";
 import {signIn} from "@/auth";
 
-export default async function onSubmit(prevState: any, formData: FormData) {
+export default async function onSubmit(prevState: { message: string | null }, formData: FormData) {
   if (!formData.get("id") || !(formData.get("id") as string)?.trim()) {
     return { message: "no_id" };
   }
@@ -19,6 +19,7 @@ export default async function onSubmit(prevState: any, formData: FormData) {
   if (!formData.get("image")) {
     return { message: "no_image" };
   }
+  formData.set('nickname', formData.get('name') as string);
   let shouldRedirect = false;
   try {
     const response = await fetch(
@@ -32,6 +33,14 @@ export default async function onSubmit(prevState: any, formData: FormData) {
     console.log(response.status);
     if (response.status === 403) {
       return { message: "user_exists" };
+    } else if (response.status === 400) {
+      return {
+        message: (await response.json()).data[0],
+        id: formData.get('id'),
+        nickname: formData.get('nickname'),
+        password: formData.get('password'),
+        image: formData.get('image')
+      };
     }
     console.log(await response.json());
     shouldRedirect = true;

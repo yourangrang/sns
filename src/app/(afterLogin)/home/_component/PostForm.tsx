@@ -2,13 +2,14 @@
 
 import {ChangeEventHandler, FormEventHandler, useRef, useState} from "react";
 import style from './postForm.module.css';
-import { useSession } from 'next-auth/react';
+import {Session} from "next-auth";
 
-export default function PostForm() {
+type Props = {
+  me: Session | null;
+}
+export default function PostForm({ me }: Props) {
   const imageRef = useRef<HTMLInputElement>(null);
   const [content, setContent] = useState('');
-  const { data: me } = useSession();
-  
 
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = (e) => {
     setContent(e.target.value);
@@ -30,7 +31,7 @@ export default function PostForm() {
         </div>
       </div>
       <div className={style.postInputSection}>
-        <textarea value={content} onChange={onChange} placeholder="이야기 파도를 보내보세요!"/>
+        <textarea value={content} onChange={onChange} placeholder="무슨 일이 일어나고 있나요?"/>
         <div className={style.postButtonSection}>
           <div className={style.footerButtons}>
             <div className={style.footerButtonLeft}>

@@ -16,6 +16,7 @@ const User = [
   {id: 'yourang', nickname: '유랑', image: '/yourang.jpg'},
   {id: 'neko', nickname: '네코', image: faker.image.avatar()},
 ]
+
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
