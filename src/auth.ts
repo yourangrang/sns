@@ -41,7 +41,7 @@ export const {
           name: user.nickname,
           image: user.image,
           ...user,
-        }
+        }  //사용자정보를 반환해야 프론트에서 useSession훅으로 사용자정보 사용가능
       },
     }),
   ]

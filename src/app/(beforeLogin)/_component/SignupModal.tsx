@@ -5,23 +5,14 @@ import onSubmit from '../_lib/signup';
 import BackButton from "@/app/(beforeLogin)/_component/BackButton";
 import { useFormStatus } from 'react-dom';
 import { useActionState } from 'react'; 
+import Default from './../@modal/default';
 
 function showMessage(message: string | null | undefined) {
-  if (message === "no_id") {
-    return "아이디를 입력하세요.";
-  }
-  if (message === "no_name") {
-    return "닉네임을 입력하세요.";
-  }
-  if (message === "no_password") {
-    return "비밀번호를 입력하세요.";
-  }
-  if (message === "no_image") {
-    return "이미지를 업로드하세요.";
-  }
-  if (message === "user_exists") {
-    return "이미 사용 중인 아이디입니다.";
-  }
+  if (message === "no_id") {return "아이디를 입력하세요.";}
+  if (message === "no_name") {return "닉네임을 입력하세요.";}
+  if (message === "no_password") {return "비밀번호를 입력하세요.";}
+  if (message === "no_image") {return "이미지를 업로드하세요.";}
+  if (message === "user_exists") {return "이미 사용 중인 아이디입니다.";}
   return '';
 }
 
@@ -70,8 +61,8 @@ export default function SignupModal() {
               </div>
             </div>
             <div className={style.modalFooter}>
+              <div style={{ color: 'red', fontSize: '18px', position:'absolute', bottom:'80px'}}>{showMessage(state?.message || null)}</div>
               <button type="submit" className={style.actionButton} disabled={pending}>가입하기</button>
-              <div style={{ color: 'red', fontSize: '18px' }}>{showMessage(state?.message || null)}</div>
             </div>
           </form>
         </div>
