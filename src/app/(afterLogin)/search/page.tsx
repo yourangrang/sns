@@ -3,13 +3,23 @@ import BackButton from "@/app/(afterLogin)/_component/BackButton";
 import SearchForm from "@/app/(afterLogin)/_component/SearchForm";
 import Tab from "@/app/(afterLogin)/search/_component/Tab";
 import SearchResult from "@/app/(afterLogin)/search/_component/SearchResult";
+import {Metadata, ResolvingMetadata} from "next";
 
 type Props = {
   searchParams: Promise<{ q: string, f?: string, pf?: string }>;
 }
+
+export async function generateMetadata({searchParams}: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const { q } = await searchParams;
+  console.log('parent', parent);
+  return {
+    title: `${q} - 검색 / Pado`,
+    description: `${q} - 검색 / Pado`,
+  }
+}
+
 export default async function Search({ searchParams }: Props) {
   const query = await searchParams;
-  
   return (
     <main className={style.main}>
       <div className={style.searchTop}>
