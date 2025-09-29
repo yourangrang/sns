@@ -21,9 +21,7 @@ export default function Post({ noImage, post }: Props) {
   if (post.Original) {
     target = post.Original;
   }
-  if (post.Parent) {
-    target = post.Parent;
-  }
+
 
   const stopPropagation: MouseEventHandler = (e) => {
     e.stopPropagation();
@@ -60,10 +58,11 @@ export default function Post({ noImage, post }: Props) {
             </Link>
             <span className={style.postDate}>{dayjs(target.createdAt).fromNow(true)}</span>
           </div>
-          {target.Parent && <div>
-            <Link href={`/${target.Parent.User.id}`} style={{ color: 'rgb(29, 155, 240)' }} onClick={stopPropagation}>@{target.Parent.User.id}</Link> 님에게 보내는 답글
-          </div>}
           <div>{target.content}</div>
+          {target.Parent && <div>
+            <Link href={`/${target.Parent.User.id}`} style={{ color: 'rgb(29, 155, 240)' }} onClick={stopPropagation}>@{target.Parent.User.id}</Link> 님의 글
+            <div>{target.Parent.content}</div>
+          </div>}
           {!noImage && <div>
             <PostImages post={target} />
           </div>}
